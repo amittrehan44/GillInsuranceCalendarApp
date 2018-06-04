@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* .dropdown-item.active {
+    background-color: #DFECFA!important;
+
+}
+
+.dropdown-item:active {
+    background-color: #DFECFA!important;
+
+} */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+input.ng-star-inserted {
+    display: none;
+}
+
+
+a.dropdown-item > span > input {
+    display: none;
+}
+
+.cell-totals {
+      margin: 5px;
+      text-align: center;
+    }
+    .badge {
+      margin-right: 5px;
+    }
+
+
+    /* .cal-day-view .cal-hour-segment.cal-after-hour-start .cal-time {
+        display: block !important;
+      } */
+
+      .cal-time {
+        font-size: .9rem !important;
+        display: block !important;
+       
+        
+      }
+  
+      .cal-day-view .cal-hour:not(:last-child) .cal-hour-segment, .cal-day-view .cal-hour:last-child :not(:last-child) .cal-hour-segment {
+          border-bottom: thin dashed #77838f !important;
+      }
+
+      .cal-day-view .cal-hour-segment::after {
+        content: '' !important;
+      }
+
+     /* autofill option dropdown on appointment input modal */
+      .cdk-overlay-container {
+          z-index: 10000 !important;
+      }
+  

@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "gillinsurancedev": "gillinsuranceadmincal",
+    "default": "gillinsuranceadmincal",
+    "gillinsuranceprod": "gillinsurancedata"
+  }
+}

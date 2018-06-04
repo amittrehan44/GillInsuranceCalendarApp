@@ -1,0 +1,25 @@
+input.ng-invalid.ng-dirty{
+    border: 1px solid red;
+}
+
+.help-block {
+    color: red;
+}
+
+.card-header{
+    background-color: #4da3ff;
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.greenClass {
+    background-color: #fc8a96 !important;
+    text-align: left !important;
+}
+
+
+textarea {
+   
+    height: 150px;
+  }

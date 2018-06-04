@@ -1,0 +1,50 @@
+
+
+<!-- <form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form> -->
+
+<div class="row ">
+    <div class="col-md-8">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input type="text"  placeholder="Enter Phone" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngFor="let client of filteredList | async" [value]="client">
+              
+              <span>{{ client.firstName | uppercase }}</span> 
+              <span>{{ client.lastName | uppercase }}</span> |
+               <span>{{client.phone}}</span> 
+              <!--<span>{{client.landline}}</span>-->
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+  </div>
+  
+
+</div>
+<!-- <div *ngIf="this._caleventService.selectedAppointment.firstName!=''">
+    <span>Total Appointments: {{ clientAppService.selectedClientApps.length }} </span><br>
+    <span>No Shows: {{ clientAppService.selectedClientApps.length }} </span>
+</div> -->
+<!-- Moving below to my-cal component-->
+<!-- <div *ngIf="this._caleventService.selectedAppointment.firstName!=''">
+  <span> <b>{{ _caleventService.selectedAppointment.firstName }} {{ _caleventService.selectedAppointment.lastName }}</b></span><br>
+  <i class="fa fa-mobile" aria-hidden="true"></i>
+  <span> {{ _caleventService.selectedAppointment.phone }} </span>
+  <i class="fa fa-phone" aria-hidden="true"></i>
+  <span> {{ _caleventService.selectedAppointment.landline }} </span>
+  <i class="fa fa-envelope-open" aria-hidden="true"></i>
+  <span> {{ _caleventService.selectedAppointment.email }} </span>
+  
+  
+  <br><br><br>
+</div> -->
