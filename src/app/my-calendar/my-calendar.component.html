@@ -248,7 +248,7 @@
                                      [events]="events"
                                      [refresh]="refresh"
                                      [activeDayIsOpen]="activeDayIsOpen"
-                                     (dayClicked)="dayClicked($event.day)"
+                                     (dayClicked)="dayClicked($event.day, 'month'); "
                                      (eventClicked)="handleEvent('Clicked', $event.event)"
                                      (eventTimesChanged)="eventTimesChanged($event)"
                                      [cellTemplate]="monthCellTemplate"
@@ -258,6 +258,7 @@
                                     [viewDate]="viewDate"
                                     [events]="events"
                                     [refresh]="refresh"
+                                    (dayHeaderClicked)="dayClicked($event.day, 'week');"
                                     (eventClicked)="handleEvent('Clicked', $event.event)"
                                     (eventTimesChanged)="eventTimesChanged($event)"
                                     [headerTemplate]="weekHeaderTemplate">
@@ -282,11 +283,11 @@
             <button class="btn btn-primary col-md-5" [routerLink]="['/clientEdit/0']" routerLinkActive="active">+ Client</button>
         </div>
             <!--       <a [routerLink]="['/ragister']" routerLinkActive="active">Appointment Register</a> -->      
-        <div style="text-align:center">
+        <!-- <div style="text-align:center">
             <h3 class="">Today's Appointments</h3>
-        </div>
-        <app-appointment-today></app-appointment-today>
-        <!-- <app-appointment-input></app-appointment-input> -->
+        </div> -->
+        <!-- <app-appointment-today></app-appointment-today> -->
+        <app-reminder-display [viewDate]='viewDate'> </app-reminder-display>
     </div>
 </div>
 <br><br><br>

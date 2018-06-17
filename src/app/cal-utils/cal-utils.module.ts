@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-    NgbDatepickerModule,
-    NgbTimepickerModule
-} from '@ng-bootstrap/ng-bootstrap';
+// import {
+//     NgbDatepickerModule,
+//     NgbTimepickerModule
+// } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarModule } from 'angular-calendar';
 import { DateTimePickerComponent } from './date-time-picker.component';
 import { CalendarHeaderComponent } from './calendar-header.component';
@@ -22,14 +22,16 @@ import { Services } from './services.model';
 import { ChartsComponent } from './charts/charts.component';
 import { ChartsModule as Ng2Charts } from 'ng2-charts';
 import { ClientModule } from './client/client.module';
+import { ReminderDisplayComponent } from './reminder-display/reminder-display.component';
 
 
 @NgModule({
   imports: [
       CommonModule,
       FormsModule,
-      NgbDatepickerModule.forRoot(),
-      NgbTimepickerModule.forRoot(),
+    //  Moved to client module  
+    //   NgbDatepickerModule.forRoot(),
+    //   NgbTimepickerModule.forRoot(),
       CalendarModule,
       AppRoutingModule,
       ContextMenuModule.forRoot({
@@ -43,7 +45,7 @@ import { ClientModule } from './client/client.module';
       ClientModule,
       ReactiveFormsModule
   ],
-  declarations: [DateTimePickerComponent, CalendarHeaderComponent, CalContextmenuComponent, AppointmentInputComponent, AppointmentListComponent, AppointmentTodayComponent,  ChartsComponent],
-    exports: [CalendarHeaderComponent, DateTimePickerComponent, CalContextmenuComponent, ContextMenuModule, AppointmentInputComponent, AppointmentListComponent, AppointmentTodayComponent, ClientModule ]
+  declarations: [ CalendarHeaderComponent, CalContextmenuComponent, AppointmentInputComponent, AppointmentListComponent, AppointmentTodayComponent,  ChartsComponent, ReminderDisplayComponent],
+    exports: [CalendarHeaderComponent,  CalContextmenuComponent, ContextMenuModule, AppointmentInputComponent, AppointmentListComponent, AppointmentTodayComponent, ClientModule, ReminderDisplayComponent ]
 })
 export class CalUtilsModule { }

@@ -1,0 +1,45 @@
+
+<div class="todayreminder"> 
+  <div calss="text-center" style="text-align: center;"> 
+  <h6><strong> Today's Reminder<br> {{today | date: 'mediumDate'  }} </strong></h6>
+  </div>
+  <div class="text-center" *ngIf="todaysReminder.length == 0">No Reminders </div>
+  <ul class="list-group hover">
+
+    <li class="list-group-item" *ngFor="let reminder of todaysReminder">
+      <div  (click)="onItemClick(reminder)">   
+      <strong>{{reminder.reminder | date: 'shortTime'}} :  </strong> {{reminder.firstName | uppercase}} {{reminder.lastName | uppercase}}
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="datereminder">  
+<div calss="text-center" style="text-align: center;"> 
+  <h6> <strong>  Reminders on <br>{{viewDate | date: 'mediumDate'  }} </strong></h6>
+</div>
+<div class="text-center" *ngIf="dateReminder.length == 0">No Reminders </div>
+  <ul class="list-group hover">
+      
+    <li class="list-group-item" *ngFor="let reminder of dateReminder">
+      <div  (click)="onItemClick(reminder)">     
+      <strong>{{reminder.reminder | date: 'shortTime'}} :  </strong> {{reminder.firstName | uppercase}} {{reminder.lastName | uppercase}}
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="missedreminder">  
+  <div calss="text-center" style="text-align: center;"> 
+    <h6><strong>   Missed Reminders </strong></h6>
+  </div>
+  <div class="text-center" *ngIf="missedReminder.length == 0">No Reminders Missed </div>
+    <ul class="list-group hover">
+    
+      <li class="list-group-item" *ngFor="let reminder of missedReminder">
+        <div  (click)="onItemClick(reminder)">   
+        <strong>{{reminder.reminder | date: 'short'}} :  </strong> {{reminder.firstName | uppercase}} {{reminder.lastName | uppercase}}
+        </div>
+      </li>
+    </ul>
+  </div>

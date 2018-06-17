@@ -75,7 +75,11 @@ export class AppointmentInputComponent implements OnInit {
             { id: 5, name: 'Investments' },
             { id: 6, name: 'Group Benefits' },
             { id: 7, name: 'Disability' },
-            { id: 8, name: 'Policy Review' },
+            { id: 8, name: 'RESP/ChildPlan' },
+            { id: 9, name: 'Policy Review' },
+            { id: 10, name: 'Policy Done' },
+            { id: 11, name: 'Policy Delivered' },
+            { id: 12, name: 'New Appointment' },
             // { id: 8, name: 'Nails' },
             // { id: 9, name: 'Makeup' },
             // { id: 10, name: 'Colour' },
@@ -140,7 +144,7 @@ export class AppointmentInputComponent implements OnInit {
             noShow: false,
             clientKey: null
         }
-        this._caleventService.durationString = '0:15';
+        this._caleventService.durationString = '0:30';
         
     }
 

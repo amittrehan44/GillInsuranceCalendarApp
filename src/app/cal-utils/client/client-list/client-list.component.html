@@ -69,12 +69,28 @@
       <mat-cell *matCellDef="let element"> {{element.notes}} </mat-cell>
     </ng-container>
 
-    <!-- Symbol Column -->
+     <!-- Notes Column -->
+     <ng-container matColumnDef="createDate">
+        <mat-header-cell *matHeaderCellDef> CreatedOn </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.createDate | slice:4:15}} </mat-cell>
+      </ng-container>
+
+    <!-- Edit Column -->
     <ng-container matColumnDef="edit">
       <mat-header-cell *matHeaderCellDef> Edit </mat-header-cell>
       <mat-cell *matCellDef="let element"> 
       <a class="btn">
         <i class="fa fa-pencil-square-o" [routerLink]="['/clientEdit', element.$key]"></i>
+      </a>  
+      </mat-cell>
+    </ng-container>
+
+    <!-- Delete Column -->
+    <ng-container matColumnDef="delete">
+      <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
+      <mat-cell *matCellDef="let element"> 
+      <a class="btn">
+        <i class="fa fa-trash-o" [routerLink]="['/clientEdit', element.$key]"></i>
       </a>  
       </mat-cell>
     </ng-container>

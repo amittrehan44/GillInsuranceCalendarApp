@@ -95,7 +95,7 @@ export class ClientAutofillComponent implements OnInit {
   this._caleventService.selectedAppointment.lastName = client.lastName;
   this._caleventService.selectedAppointment.email = client.email;
   this._caleventService.selectedAppointment.phone = client.phone;
-  this._caleventService.selectedAppointment.landline = client.landline;
+ // this._caleventService.selectedAppointment.landline = client.landline;
   this._caleventService.selectedAppointment.clientKey = client.$key;
   this._caleventService.selectedAppointment.gender = client.gender;
   //get all appointments for selected client

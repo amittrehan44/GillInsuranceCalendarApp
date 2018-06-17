@@ -1,0 +1,19 @@
+.todayreminder, .datereminder, .missedreminder {
+   margin-bottom: 10px;
+}
+
+.todayreminder ul li{
+    font-size:  13px;
+   background-color: lightseagreen;
+}
+
+.datereminder ul li{
+    font-size:  13px;
+   background-color: lightsalmon;
+}
+
+.missedreminder ul li{
+    font-size:  13px;
+   background-color: lightcoral;
+}
+

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, forwardRef, Input } from '@angular/core';
+import { ChangeDetectorRef,  Component, forwardRef, Input, OnInit } from '@angular/core';
 import {
     getSeconds,
     getMinutes,
@@ -58,7 +58,7 @@ export const DATE_TIME_PICKER_CONTROL_VALUE_ACCESSOR: any = {
     ],
     providers: [DATE_TIME_PICKER_CONTROL_VALUE_ACCESSOR]
 })
-export class DateTimePickerComponent implements ControlValueAccessor {
+export class DateTimePickerComponent implements ControlValueAccessor, OnInit {
     @Input() placeholder: string;
 
     date: Date;
@@ -74,6 +74,10 @@ export class DateTimePickerComponent implements ControlValueAccessor {
 
     constructor(private cdr: ChangeDetectorRef) { }
 
+    ngOnInit() {
+        
+    }
+
     writeValue(date: Date): void {
         this.date = date;
         this.dateStruct = {
@@ -86,7 +90,11 @@ export class DateTimePickerComponent implements ControlValueAccessor {
             minute: getMinutes(date),
             hour: getHours(date)
         };
-        this.cdr.detectChanges();
+        //this.cdr.detectChanges();
+
+        if (!this.cdr['destroyed']) {
+            this.cdr.detectChanges();
+        }
         
     }
 

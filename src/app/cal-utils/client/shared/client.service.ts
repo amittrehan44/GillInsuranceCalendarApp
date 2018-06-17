@@ -13,12 +13,14 @@ export class ClientService {
 
  getData(){
     this.clientList = this.firebase.list('clients');
+    
     return this.clientList;
   }
 
+
   insertClient(client: Client): string 
   {
-    console.log("Inside InsertClient ");
+    console.log("Inside InsertClient "+ client.reminder);
     return this.clientList.push({
       firstName: client.firstName,
       lastName: client.lastName,
@@ -33,7 +35,10 @@ export class ClientService {
       postal: client.postal,
       lead: client.lead,
       profession: client.profession,
-      notes: client.notes
+      notes: client.notes,
+      reminder: client.reminder.toString(),
+      status: client.status,
+      createDate: new Date().toString(),
     }).key;
   }
 
@@ -54,7 +59,10 @@ export class ClientService {
         postal: client.postal,
         lead: client.lead,
         profession: client.profession,
-        notes: client.notes
+        notes: client.notes,
+        reminder: client.reminder.toString(),
+        status: client.status,
+        createDate: client.createDate.toString(),
     });
   }
 

@@ -1,5 +1,5 @@
 import {
-    Component, OnInit, ChangeDetectionStrategy,
+    Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef,
     ViewChild,
     TemplateRef } from '@angular/core';
 
@@ -57,6 +57,7 @@ const colors: any = {
 
 @Component({
   selector: 'app-my-calendar',
+  changeDetection: ChangeDetectionStrategy.Default,  
   templateUrl: './my-calendar.component.html',
     styleUrls: ['./my-calendar.component.css']
 })
@@ -162,10 +163,15 @@ export class MyCalendarComponent implements OnInit {
                 public _caleventService: CalEventsService,
                 private clientService: ClientService,  
                 private clientAppService: ClientAppointmentsService, 
-                public auth: AuthService) { }
+                public auth: AuthService,
+                private cdr: ChangeDetectorRef) { }
 
-    dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
-        if (isSameMonth(date, this.viewDate)) {
+    dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }, view: string): void {
+        
+        this.viewDate = date;
+        //console.log(view);
+        
+        if (isSameMonth(date, this.viewDate) && view == "month") {
             if (
                 (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
                 events.length === 0
@@ -176,6 +182,8 @@ export class MyCalendarComponent implements OnInit {
                 this.viewDate = date;
             }
         }
+
+        this.cdr.detectChanges();
     }
 
     eventTimesChanged({
@@ -240,6 +248,8 @@ export class MyCalendarComponent implements OnInit {
 
         this._caleventService.optionsMultiselect = event.meta.serviceOptionIds;
     }
+
+    
 
 
     /* I dont think this function is used anywhere

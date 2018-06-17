@@ -1,4 +1,8 @@
-input.ng-invalid.ng-dirty{
+/* input.ng-invalid.ng-dirty{
+    border: 1px solid red;
+} */
+
+.dirtyClass {
     border: 1px solid red;
 }
 
@@ -20,6 +24,15 @@ input.ng-invalid.ng-dirty{
 
 
 textarea {
-   
-    height: 150px;
+   width: 100%;
+    height: 600px;
+  }
+
+  .notes{
+      padding: 0 0;
+      margin: 0 0;
+  }
+
+  input, select {
+    font-weight: 500;
   }

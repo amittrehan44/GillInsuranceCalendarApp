@@ -3,7 +3,7 @@ export class Client {
     firstName: string;
     lastName: string;
     phone: string;
-    landline: string;
+    landline: string[];
     email: string;
     age: string;
     gender: string;
@@ -14,5 +14,8 @@ export class Client {
     lead: string;
     profession: string;
     notes: string;
+    reminder: string;
+    status: string;
+    createDate: string
 
 }

@@ -14,10 +14,18 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { ClientAutofillComponent } from './client-autofill/client-autofill.component';
 import { ClientListComponent } from './client-list/client-list.component';
 
+import { DateTimePickerComponent } from '../date-time-picker.component';
+import {
+  NgbDatepickerModule,
+  NgbTimepickerModule
+} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+    NgbDatepickerModule.forRoot(),
+    NgbTimepickerModule.forRoot(),
     CommonModule,
     AppRoutingModule,
     TextMaskModule,
@@ -28,7 +36,7 @@ import { ClientListComponent } from './client-list/client-list.component';
     MatInputModule,
     MatTableModule
   ],
-  declarations: [ClientInputComponent,  NavbarComponent, ClientAutofillComponent, ClientListComponent],
-  exports: [ClientInputComponent, NavbarComponent, ClientAutofillComponent, MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatTableModule]
+  declarations: [ClientInputComponent,  NavbarComponent, ClientAutofillComponent, ClientListComponent, DateTimePickerComponent],
+  exports: [ClientInputComponent, NavbarComponent, ClientAutofillComponent, DateTimePickerComponent, MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatTableModule]
 })
 export class ClientModule { }
